@@ -1,0 +1,10 @@
+sudo docker ps 
+
+# Copying one file TO the container
+
+sudo docker cp <filename> <container_ID>:/<DEST>
+
+
+# Copying one file FROM the container
+
+sudo docker cp <container_ID>:/<filename> <filename>
