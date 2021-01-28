@@ -1,0 +1,12 @@
+# Volumes in docker is used for data persistence
+
+sudo docker run -dit --name <container_name> -v <host's_path>:<container's_path> <image>:<tag>
+
+sudo docker ps 
+
+# You can create your own volumes 
+
+sudo docker volume create [OPTIONS]
+
+sudo cd /var/lib/docker/volumes
+
