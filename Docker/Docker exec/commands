@@ -1,0 +1,31 @@
+# Changing the apache port inside of a docker container
+
+sudo docker ps
+
+sudo docker exec -it <container_id> bash 
+
+# If your container won't support bash, you can go for 'sh'
+
+# Now inside of a container
+
+apt-get install vim -y
+
+vim /etc/apache2/ports.conf
+
+# By default, port is set to 80. You can set any port of your choice, I am going to set it to 5003.
+
+service apache2 restart
+
+curl localhost:5003
+
+exit
+
+# Outside of the container
+
+sudo docker inspect <container_id>
+
+# Grab the IP of running container
+
+curl http://<container_ip>:5003
+
+ 
