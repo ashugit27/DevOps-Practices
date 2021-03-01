@@ -1,0 +1,25 @@
+# Docker compose file for apache and mysql containers
+# With ports and Volume mapping and without Dockerfile 
+
+version: '3'
+services:
+ web: 
+   container_name: php_web
+   image: php:rc-apache
+   ports: 
+     - "6000:80"
+   volumes: 
+     - /var/www/html:/var/www/html
+
+ DB:
+   container_name: mysql_web
+   image: mariadb:latest
+   ports: 
+     - "3306:3306"
+   volumes: 
+     - /var/lib/mysql:/var/lib/mysql
+   environment:
+     MYSQL_DATABASE: 'database_web'
+     MYSQL_USER: 'db_user'
+     MYSQL_PASSWORD: 'db_pass'
+     MYSQL_ROOT_PASSWORD: 'root_pass'
