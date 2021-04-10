@@ -1,0 +1,30 @@
+
+- hosts: <name>
+  become: yes
+  tasks:
+    - file:
+        path: <>
+        state: touch
+        owner: <>
+        group: <>
+        mode: '<>'
+
+- hosts: <name>
+  become: yes
+  tasks:
+    - file:
+        path: <>
+        state: touch
+        owner: <>
+        group: <>
+        mode: '<>'
+
+- hosts: <name>
+  become: yes
+  tasks:
+    - file:
+        path: <>
+        state: touch
+        owner: <>
+        group: <>
+        mode: '<>'
