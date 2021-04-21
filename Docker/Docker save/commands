@@ -1,0 +1,22 @@
+# How to make an archive of an image and send it to another server with same tag
+
+## Server 1
+
+# Check the running containers
+
+$ sudo docker ps
+
+# Make an arhchive
+
+$ sudo docker save <imagename> > <imagename.tar>
+
+$ sudo scp -rp <imagename.tar> username@server2ip:/<location> (/tmp is prefered for initial transfer)
+
+## Server 2
+
+# find the archive on given path
+
+$ sudo docker load < <imagename.tar>
+
+$ sudo docker ps
+
