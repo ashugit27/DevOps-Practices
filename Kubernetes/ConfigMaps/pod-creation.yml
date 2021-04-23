@@ -1,0 +1,23 @@
+# Here I am using a single configuration from configmap. There are other ways also.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: <name>
+spec:
+   volumes:
+     - name: <name>
+       emptyDir: {}
+   containers:
+     - name: <name>
+       image: <name>
+       env:
+         - name: <name>
+           valueFrom:
+              configMapKeyRef:
+                 name: <name>
+                 key: <name>
+       command: [""]
+       volumeMounts:
+         - mountPath: <path>
+           name: <name>
