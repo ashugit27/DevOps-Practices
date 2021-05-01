@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <name>
+spec:
+  selector:
+    matchLabels:
+      <key>: <value>
+  replicas: <>
+  template:
+    metadata:
+      labels:
+        <key>: <value>
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: <>
+                    operator: In
+                    values:
+                      - <>
+      containers:
+         - name: <container_name>
+           image: <image_name>
