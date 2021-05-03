@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: <name>
+spec:
+   template:
+      metadata:
+        name: <name>
+      spec:
+         containers:
+           - name: <container_name>
+             image: <image_name>
+             command: [""]
+         restartPolicy: Never
