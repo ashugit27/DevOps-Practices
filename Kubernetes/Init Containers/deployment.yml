@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: <deployement_name>
+   labels:
+     <key>: <value>
+spec:
+  replicas: <>
+  selector:
+     matchLabels:
+        <key>: <value>
+  template:
+       metadata:
+         labels:
+           <key>: <value>
+       spec:
+         containers:
+           - name: <container_name>
+             image: <image_name>
+             command: ['']
+             volumeMounts:
+               - mountPath: <>
+                 name: <volume_name>
+         initContainers:
+           - name: <container_name>
+             image: <image_name>
+             command: []
+             volumeMounts:
+               - mountPath: <>
+                 name: <volume_name>
+         volumes:
+           - name: <volume_name>
+             emptyDir: {}
