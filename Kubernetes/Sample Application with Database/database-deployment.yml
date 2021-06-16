@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <>
+  labels:
+    db: <>
+spec:
+  selector:
+    matchLabels:
+      <>: <>
+  template:
+    metadata:
+      labels:
+        <>: <>
+    spec:
+      containers:
+      - name: <>
+        image: <>
+        env:
+          - name: MYSQL_DATABASE
+            value: <>
+          - name: MYSQL_ROOT_PASSWORD
+            value: <USE STRONG PASSWORD>
+          - name: MYSQL_PASSWORD
+            value: <USE STRONG PASSWORD>
+          - name: MYSQL_USER
+            value: <>
+        volumeMounts:
+        - name: <>
+          mountPath: <>
+      volumes:                    # Here I haven't used Persistent Volumes Claim due to use case.
+      - name: <>
+        emptyDir: <>
+
