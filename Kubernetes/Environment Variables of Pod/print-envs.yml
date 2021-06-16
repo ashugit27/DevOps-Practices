@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: <>
+spec:
+  containers:
+    - name: <>
+      image: <>
+      env:
+        - name: <>
+          value: "<>"
+        - name: <>
+          value: "<>"
+        - name: <>
+          value: "<>"
+      command: ["echo"]
+      args: ["$(name) $(name) $(name)"]
