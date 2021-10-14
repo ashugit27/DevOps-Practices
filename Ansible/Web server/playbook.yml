@@ -1,0 +1,32 @@
+- hosts: all
+  become: yes
+  tasks:
+     - name: installing httpd
+       yum:
+         name: httpd
+         state: present
+
+     - name: Start service httpd
+       service:
+           name: httpd
+           state: started
+           enabled: yes
+
+     - name: Creating file
+       copy:
+          dest: /var/www/html/index.html
+          owner: apache
+          group: apache
+          mode: '<>'
+          content: '<>'
+
+     - name: Using Lineinfile module
+       lineinfile:
+           path: /var/www/html/index.html
+           insertbefore: BOF
+           line: '<>'
+
+     - name: Restart service httpd
+       service:
+          name: httpd
+          state: restarted
